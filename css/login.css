@@ -1,0 +1,67 @@
+body, html{
+  height: 100%;
+}
+
+body{
+  margin: 0%;
+  padding: 0%;
+  background: violet;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.titulo{
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+font-size:xx-large;
+}
+
+.center{
+  margin: 2rem;
+padding: 50px 100px;
+text-align: center;
+  background-color: blueviolet;
+  border-radius: 24px;
+
+}
+.login{
+  color: aliceblue;
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  margin: 20px auto ;
+}
+
+  .login input[type="email"],
+  .login input[type="password"] {
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    text-align: center;
+    border: 2px solid rgba(220, 39, 145, 0.592);
+    width: 200px;
+    border-radius: 24px;
+    font-size: large;
+  }
+
+button{
+  display: block;
+  margin: 20px auto;
+  padding: 14px 10px;
+  text-align: center;
+  border: 2px solid rgba(220, 39, 145, 0.592);
+  width: 200px;
+  border-radius: 24px;
+  font-size: large;
+}
+
+
+img{
+  width: 500px;
+  height: 200px;
+  float: left;
+  border-radius: 24px;
+}
