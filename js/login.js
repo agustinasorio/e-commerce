@@ -1,10 +1,15 @@
 const email = document.querySelector('#email');
 const contraseña = document.querySelector('#password1');
 const bttn = document.querySelector('#regBtn');
+let user = document.getElementById("email");
 
 bttn.addEventListener('click', function () {
     if (passCaracteres() && verificarInput()) {
-        window.location.href = "index.html";
+        sessionStorage.setItem('logueado', 'true');
+        localStorage.setItem('email', user.value);
+        window.location.href = 'index.html';
+        return true;
+
         showAlertSuccess();
         setInterval("location.reload()", 1000);
     }
@@ -43,4 +48,9 @@ function verificarInput() {
                 return true;
             }
         }
+
+document.getElementById('login').addEventListener('click', () => {
+    localStorage.setItem('user', document.getElementById('input').value);
+    document.getElementById('nombre').innerHTML = localStorage.getItem('user');
+})
 
