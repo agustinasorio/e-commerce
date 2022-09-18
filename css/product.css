@@ -64,3 +64,9 @@ div.cont{
 }
 
 
+#pr{
+    padding: 10px;
+    border: 5px solid rgb(85, 4, 155);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: white; 
+}

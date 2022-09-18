@@ -45,9 +45,18 @@ function sortProducts (criterio, array){
   return result;
 }
 
-function setCatID(id) {
-  localStorage.setItem("catID", id);
-  window.location = "products.html"
+function getProductsByCategoryId(id){
+  return getJSONData(PRODUCTS_URL + id + EXT_TYPE)
+          .then( (response) => {
+              return response.data;
+          });
+          
+}
+
+//llevar a product
+function setProductID(id) {
+  localStorage.setItem("productID", id);
+  window.location = "product-info.html"
 }
 
 function showCategoriesList(){
@@ -59,22 +68,23 @@ function showCategoriesList(){
     if (((minCost == undefined) || (minCost != undefined && parseInt(product.cost) >= minCost)) &&
             ((maxCost == undefined) || (maxCost != undefined && parseInt(product.cost) <= maxCost))) {
 
-              htmlContentToAppend += `<div class="card " style="width: 20rem;">
-              <h5 id="titulo${1}" class="card-title" >${product.name} - ${product.cost}</h5>  
-              <div display-block; margin-0px-auto text-aling-center border-bottom-2rem; font-size: large;>
-              <img id="image${1}" src="${product.image}" class="card-img-top" alt="card image cap">
+              htmlContentToAppend += `<div onclick=setProductID(${product.id}) class="list-group-item list-group-item-action cursor-active m-auto p-10px">
+              <div class="row">
+                  <div class="col-3">
+                      <img src="${product.image}"
+                           id="image${1}"
+                          alt="${product.name}"
+                          class="img-thumbnail">
+                  </div>
+                  <div class="col">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h4 class="mb-1">${product.name} - ${product.currency} ${product.cost}</h4>
+                          <small class="text-muted">${product.soldCount} vendidos</small>
+                      </div>
+                      <p class="mb-1">${product.description}</p>
+                  </div>
               </div>
-          <div class="card-body">
-          <div class="d-flex w-100 justify-content-between">
-            <p id="descripcion${i}"class="card-text">${product.description}</p>
-          </div>
-        <p  class="card-text"> <small id="small${1}">${product.soldCount} unidades disponibles </small></p>
-          <div class="d-grid gap-2">
-          <button class="btn btn-primary button"> Añadir a carrito</button>
-          </div>
-          </div>
-        </div>
-        `
+          </div>`
   }
   
   document.getElementById("PRODUCTS").innerHTML = htmlContentToAppend;

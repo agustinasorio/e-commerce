@@ -1,0 +1,33 @@
+body{
+    color: black;
+
+}
+img{
+    text-align: center;
+    margin-top: auto;
+    padding: auto;
+}
+
+form#commentForm {
+    float: left;
+    text-align: left;
+    width: 70%;
+    margin-left: 30%;
+    padding: 13%;
+    background-color: rgb(224, 214, 219);
+    border: 5px solid rgb(180, 128, 207);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+}
+#commentBTN {
+    margin: 3px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    background-color: rgb(234, 31, 150);
+    border-color: rgb(226, 9, 255);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+div#stars_rating {
+    float: left;
+}
