@@ -1,7 +1,18 @@
-.cont{
-    padding: 10px;
-    background-image: url('../img/IMG_8983.jpg');
-    border: 5px solid rgb(85, 4, 155);
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
+
+
+.cont1{
+    background-image: url(../img/12.jpg);
+    max-width: 100%;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.container1{
+    border-radius: 5px solid rgba(220, 39, 145, );
+    text-align: right;
+}
+p{
+    color: aliceblue;
 }

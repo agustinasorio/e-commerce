@@ -59,6 +59,8 @@ function setProductID(id) {
   window.location = "product-info.html"
 }
 
+
+
 function showCategoriesList(){
 
   let htmlContentToAppend ="";
@@ -71,10 +73,7 @@ function showCategoriesList(){
               htmlContentToAppend += `<div onclick=setProductID(${product.id}) class="list-group-item list-group-item-action cursor-active m-auto p-10px">
               <div class="row">
                   <div class="col-3">
-                      <img src="${product.image}"
-                           id="image${1}"
-                          alt="${product.name}"
-                          class="img-thumbnail">
+                      <img src="${product.image}" id="image${1}" alt="${product.name}" class="img-thumbnail">
                   </div>
                   <div class="col">
                       <div class="d-flex w-100 justify-content-between">

@@ -1,6 +1,6 @@
 body{
     color: black;
-
+  
 }
 img{
     text-align: center;
@@ -9,15 +9,15 @@ img{
 }
 
 form#commentForm {
-    float: left;
     text-align: left;
     width: 70%;
     margin-left: 30%;
     padding: 13%;
-    background-color: rgb(224, 214, 219);
+    background-image: url(../img/IMG_8983.jpg);
     border: 5px solid rgb(180, 128, 207);
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:sans-serif; 
     font-size: large;
+    color: aliceblue;
 }
 #commentBTN {
     margin: 3px;
@@ -30,4 +30,19 @@ form#commentForm {
 }
 div#stars_rating {
     float: left;
+}
+
+h4{
+    text-align: center;
+}
+#users{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+
+#opinion{
+    border-radius: 5px solid rgb(234, 31, 150);
 }

@@ -2,11 +2,14 @@ let product = {};
 let num_stars = 1;
 const user = document.getElementById("users");
 
+
+//traigo  la informacion de json
 fetch(PRODUCT_INFO_URL + localStorage.getItem("productID") + EXT_TYPE)
   .then((resp) => resp.json())
   .then((data) => {
   console.log(data);
-  
+  const infoRelatedProducts = data.relatedProducts;
+
   document.getElementById("ProdInfo").innerHTML += `<div class="list-group-item">
   <p>Nombre</p>
   <div class="row">
@@ -32,11 +35,26 @@ document.getElementById("ProdInfo").innerHTML += `<div class="list-group-item">
 <div class="row">
 <div class="col-12"><h3>${data.category}</h3>
 <hr>`
-
+ 
+//llamo a las imagenes
  document.getElementById("img1").src = data.images[0];
  document.getElementById("img2").src = data.images[1];
  document.getElementById("img3").src = data.images[2];
  document.getElementById("img4").src = data.images[3];
+
+ for (t = 0; t < data.relatedProducts.length; t++) {
+      productosRelacionados.innerHTML += `
+      <div class="card col-6">
+        <div class="card-header text-center">
+          <img src="${infoRelatedProducts[t].image}" alt="Imagen representativa de ${infoRelatedProducts[t].name}" style="width: 100%;">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">${infoRelatedProducts[t].name}</h5>
+          <a href="/product-info.html" class="btn btn-primary" onclick="setCatID(${infoRelatedProducts[t].id})">Ver Producto</a>
+        </div>
+      </div>
+      `
+ }
 })
 
 
@@ -84,7 +102,8 @@ function show_rating(num) {
   }
 }
 
-fetch(PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("catIDP") + EXT_TYPE)
+//llamar al json para los comentarios
+fetch(PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("productID") + EXT_TYPE)
   .then((resp) => resp.json())
   .then((data) => {
     for (i = 0; i < data.length; i++) {
@@ -94,5 +113,13 @@ fetch(PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("catIDP") + EXT_TYPE)
       <p><small>${data[i].dateTime}</small></p>
       </li>`
 
+
     }
   })
+
+ 
+  
+ 
+  
+
+  
