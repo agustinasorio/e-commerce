@@ -42,6 +42,9 @@ document.getElementById("ProdInfo").innerHTML += `<div class="list-group-item">
  document.getElementById("img3").src = data.images[2];
  document.getElementById("img4").src = data.images[3];
 
+
+
+
  for (t = 0; t < data.relatedProducts.length; t++) {
       productosRelacionados.innerHTML += `
       <div class="card col-6">
@@ -55,6 +58,18 @@ document.getElementById("ProdInfo").innerHTML += `<div class="list-group-item">
       </div>
       `
  }
+  productosRelacionados.innerHTML += `
+  <div class="card col-6">
+    <div class="card-header text-center">
+      <img src="${infoRelatedProducts[t].image}" alt="Imagen representativa de ${infoRelatedProducts[t].name}" style="width: 100%;">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">${infoRelatedProducts[t].name}</h5>
+      <a href="/product-info.html" class="btn btn-primary" onclick="setCatID(${infoRelatedProducts[t].id})">Ver Producto</a>
+    </div>
+  </div>
+  `
+}
 })
 
 
