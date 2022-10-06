@@ -14,10 +14,12 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 
+
+
+
+
+
 //menu despegable//
-
-
-
 function menuDesp(){
     const usuario = localStorage.getItem("user");
     if(usuario != "") {

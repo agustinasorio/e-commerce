@@ -59,19 +59,21 @@ document.getElementById("ProdInfo").innerHTML += `<div class="list-group-item">
       `
  }
   productosRelacionados.innerHTML += `
+ //Traer productos relacionados
+
+for (i =0; i<data.relatedProducts.length; i++){
+  productRel.innerHTML += `
   <div class="card col-6">
-    <div class="card-header text-center">
-      <img src="${infoRelatedProducts[t].image}" alt="Imagen representativa de ${infoRelatedProducts[t].name}" style="width: 100%;">
+      <div class="card-header text-center">
+        <img src="${infoRelatedProducts[i].image}" alt="Imagen representativa de ${infoRelatedProducts[i].name}" style="width: 100%;">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">${infoRelatedProducts[i].name}</h5>
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">${infoRelatedProducts[t].name}</h5>
-      <a href="/product-info.html" class="btn btn-primary" onclick="setCatID(${infoRelatedProducts[t].id})">Ver Producto</a>
-    </div>
-  </div>
   `
 }
 })
-
 
 // Mostar el nombre del usuario actual en el formulario de nuevo comentario.
 var userComment = localStorage.getItem("nombre_usuario");
