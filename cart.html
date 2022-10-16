@@ -11,6 +11,13 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
+<style>
+  .cart-img {
+    height: 80px;
+}
+</style>
+
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
@@ -35,13 +42,89 @@
       </div>
     </div>
   </nav>
+
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+      <div class="text-center">
+        <h3 class="alert-heading">Carrito de Compras</h3>
+     </div>
+     <div class="row">
+     <h5>Articulos a Comprar</h5>
+    <table id="cartShop" class="table table-striped table-hover text-center align-middle">
+    <thead lass="bg-light">
+       <tr>
+       <th scope="col"></th>
+       <th scope="col">Nombre</th>
+       <th  scope="col">Costo</th>
+       <th scope="col">Cantidad</th>
+       <th scope="col">SubTotal</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+      </tr>
+  </tbody>
+  </table>
+<div class="row pt-4">
+<h4>Tipo de Envio</h4>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="express-radio">
+  <label class="form-check-label" for="premium-radio">
+    Premium 2 a 5 días (15%)
+</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="express-radio">
+  <label class="form-check-label" for="premium-radio">
+    Express 5 a 5 días (7%)
+</label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="express-radio">
+  <label class="form-check-label" for="premium-radio">
+    Standar 12 a 15 días (5%)
+</label>
+</div>
+</div>
+
+
+<div class="row pt-4 pb-2">
+<h4>Direccion de Envio</h4>
+
+<div class="row row-cols-2 gy-3 ge-5 mt-0 ps-0">
+  <div class="col">
+  <label for="street" class="form-label">Calle</label>
+  <input type="text" class="form-control" id="street">
+  </div>
+
+  <div class="col">
+    <label for="stnumber" class="form-label">Numero</label>
+    <input type="text" class="form-control" id="st-number">
     </div>
+
+    <div class="col">
+      <label for="stcorner" class="form-label">Esquina</label>
+      <input type="text" class="form-control" id="stcorner">
+      </div>
+</div>
+
+</div>
+
+
+
+
+</div>
+</div>
   </main>
+
+
+
+
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
