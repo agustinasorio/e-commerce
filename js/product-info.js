@@ -45,6 +45,7 @@ document.getElementById("ProdInfo").innerHTML += `<div class="list-group-item">
 
 
 //Mostrar productos Relacionados//
+let productRel = document.getElementById("productosRelacionados");
 for (i =0; i<data.relatedProducts.length; i++){
   productRel.innerHTML += `
   <div class="card col-6">
@@ -57,11 +58,6 @@ for (i =0; i<data.relatedProducts.length; i++){
     </div>`
 }
 })
-
-
-
-
-
 
 
 
@@ -124,8 +120,36 @@ fetch(PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("productID") + EXT_TYPE)
 
     }
   })
+  const addedToCartSuccesfully = document.getElementById("added-to-cart-success");
 
- 
+  document.getElementById("buy-btn").addEventListener("click", () => {
+      // si no existe un valor de clave cartProducts devuelve un objeto vacio
+      // de lo contrario parsea el string a objeto
+      var cart = JSON.parse(localStorage.getItem("cartProducts")) || {};
+  
+      // se agrega una sola vez cada producto. Tal vez no es lo que quiero?
+      // no se que es mejor que cada vez que aprete se sume uno al count
+      // o que solo se agregue una vez y dsps el usr modofique la cant desde el carrito
+      if (!(ProdInfo.id in cart)) {
+          cart[ProdInfo.id] = 
+              {
+                  id: ProdInfo.id,
+                  name: ProdInfo.name, 
+                  count: 1, 
+                  unitCost: ProdInfo.cost, 
+                  currency: ProdInfo.currency, 
+                  image: ProdInfo.images
+              }
+          };
+      localStorage.setItem("cartProducts", JSON.stringify(cart));
+  
+      // muestra el mensaje de exito por 4 segundos
+      addedToCartSuccesfully.classList.remove("d-none");
+      setTimeout(() => {
+          addedToCartSuccesfully.classList.add("d-none")
+      }, 4000);
+  });
+  
   
  
   
